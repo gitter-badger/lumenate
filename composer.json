@@ -1,8 +1,8 @@
 {
-	"name": "orchestra/platform",
-	"description": "Orchestra Platform",
+	"name": "orchestra/lumenate",
+	"description": "Orchestra Lumenate",
 	"homepage": "http://orchestraplatform.com/docs/latest/",
-	"keywords": ["framework", "laravel", "orchestra-platform", "orchestral"],
+	"keywords": ["framework", "laravel", "lumen", "orchestra-platform", "orchestral"],
 	"license": "MIT",
 	"type": "project",
 	"require": {
