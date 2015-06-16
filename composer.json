@@ -6,6 +6,7 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
+		"php": ">=5.5.9",
 		"orchestra/foundation": "3.1.*",
 		"orchestra/lumen": "3.1.*",
 		"orchestra/installer": "~3.1",
@@ -13,8 +14,6 @@
 	},
 	"require-dev": {
 		"orchestra/testing": "~3.1",
-		"mockery/mockery": "0.9.*",
-		"phpunit/phpunit": "~4.0",
 		"phpspec/phpspec": "~2.1"
 	},
 	"autoload": {
@@ -33,22 +32,22 @@
 	"scripts": {
 		"post-install-cmd": [
 			"php artisan clear-compiled",
-			"php artisan publish:assets orchestra/foundation",
-			"php artisan orchestra:optimize"
+			"php artisan orchestra:assemble"
+		],
+		"pre-update-cmd": [
+			"php artisan clear-compiled"
 		],
 		"post-update-cmd": [
-			"php artisan clear-compiled",
-			"php artisan publish:assets orchestra/foundation",
-			"php artisan orchestra:optimize"
+			"php artisan orchestra:assemble"
+		],
+		"post-root-package-install": [
+			"php -r \"copy('.env.example', '.env');\""
 		],
 		"post-create-project-cmd": [
-			"php -r \"copy('.env.example', '.env');\"",
 			"php artisan key:generate"
 		]
 	},
 	"config": {
 		"preferred-install": "dist"
-	},
-	"prefer-stable": true,
-	"minimum-stability": "dev"
+	}
 }
