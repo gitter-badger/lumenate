@@ -1,6 +1,6 @@
 <?php
 
-class ExampleTest extends LumenTestCase
+class LumenExampleTest extends LumenTestCase
 {
     /**
      * A basic test example.
